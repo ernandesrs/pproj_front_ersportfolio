@@ -1,0 +1,33 @@
+$primary-light: #5DC8DF;
+$primary-normal: #23B0CF;
+$primary-dark: #11B0D3;
+
+$secondary-light: #A0B3B7;
+$secondary-normal: #92A6AA;
+$secondary-dark: #829599;
+
+$dark-light: #7F8A8C;
+$dark-normal: #575F61;
+$dark-dark: #464E50;
+
+$light-light: #F5F5F5;
+$light-normal: #EEEEEE;
+$light-dark: #EBEBEB;
+
+$theme-colors: (
+    "primary-light": $primary-light,
+    "primary-normal": $primary-normal,
+    "primary-dark": $primary-dark,
+    
+    "secondary-light": $secondary-light,
+    "secondary-normal": $secondary-normal,
+    "secondary-dark": $secondary-dark,
+    
+    "dark-light": $dark-light,
+    "dark-normal": $dark-normal,
+    "dark-dark": $dark-dark,
+    
+    "light-light": $light-light,
+    "light-normal": $light-normal,
+    "light-dark": $light-dark,
+);

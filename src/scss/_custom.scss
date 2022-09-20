@@ -1,0 +1,34 @@
+body {
+    background-image: url(./../../assets/img/background_top.jpg);
+    background-repeat: no-repeat;
+}
+
+.section {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.banner {
+    min-height: 100vh;
+}
+
+.skills {
+    min-height: 585px;
+}
+
+.works {
+    min-height: 100vh;
+}
+
+.contact {
+    min-height: 715px;
+}
+
+.footer{
+    background-color: $light-light;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

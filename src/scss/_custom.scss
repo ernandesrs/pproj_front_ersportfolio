@@ -1,31 +1,152 @@
 body {
     background-image: url(./../../assets/img/background_top.jpg);
     background-repeat: no-repeat;
+
+    font-family: 'Maven Pro', sans-serif;
+    color: $dark-normal;
 }
 
 .section {
+    display: flex;
+    align-items: center;
     width: 100%;
     position: relative;
     z-index: 1;
+
+    .title {
+        font-size: 1.563rem;
+        font-weight: 600;
+        color: $dark-light;
+        text-transform: uppercase;
+    }
+
+    .subtitle {
+        font-weight: 600;
+        font-size: 2.188rem;
+        color: $dark-normal;
+        text-transform: capitalize;
+    }
 }
 
 .banner {
     min-height: 100vh;
+
+    .name,
+    .title {
+        color: $dark-dark;
+    }
+
+    .social-profiles {
+        a {
+            display: inline-block;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .name {
+        font-size: 1.563rem;
+        font-weight: 600;
+    }
+
+    .title {
+        font-size: 3.125rem;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    
+    .description {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 }
 
 .skills {
     min-height: 585px;
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: $primary-normal;
+            border-radius: $border-radius;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .skill-title {
+            font-size: 1.563rem;
+            font-weight: 600;
+            padding: $spacer / 2 0;
+            margin-bottom: 0;
+        }
+
+        .skill-text {
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    }
 }
 
 .works {
     min-height: 100vh;
 }
 
-.contact {
+.findme {
     min-height: 715px;
+
+    .text {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .contacts {
+        .contact {
+            padding: $spacer;
+            filter: grayscale(100);
+            transition: $transition-base;
+
+            .text {
+                padding: $spacer / 2 0;
+                text-transform: uppercase;
+                font-size: 1rem;
+                font-weight: 600;
+                color: $dark-dark;
+            }
+
+            &:hover {
+                text-decoration: none;
+                transition: $transition-base;
+                filter: grayscale(0);
+
+                .text {
+                    color: $primary-normal;
+                }
+            }
+        }
+    }
 }
 
-.footer{
+.footer {
     background-color: $light-light;
     min-height: 120px;
     display: flex;

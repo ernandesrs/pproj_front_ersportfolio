@@ -10859,12 +10859,24 @@ body {
 }
 
 .floating-nav {
-  display: none;
   width: 100%;
   position: fixed;
   top: 0.25rem;
   left: 0;
   z-index: 999;
+  transform: translateY(calc(-100% - 0.5rem));
+}
+.floating-nav.visible-nav {
+  animation-name: floatingNavShow;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-duration: 0.25s;
+}
+@keyframes floatingNavShow {
+  100% {
+    transform: translateY(0%);
+  }
 }
 .floating-nav .container {
   display: flex;

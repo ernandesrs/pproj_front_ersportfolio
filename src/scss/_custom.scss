@@ -7,12 +7,26 @@ body {
 }
 
 .floating-nav {
-    display: none;
     width: 100%;
     position: fixed;
     top: $spacer / 4;
     left: 0;
     z-index: 999;
+    transform: translateY(calc(-100% - ($spacer / 2)));
+
+    &.visible-nav {
+        animation-name: floatingNavShow;
+        animation-timing-function: ease-in;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-duration: .25s;
+    }
+
+    @keyframes floatingNavShow {
+        100% {
+            transform: translateY(0%);
+        }
+    }
 
     .container {
         display: flex;

@@ -11003,10 +11003,13 @@ body {
   filter: grayscale(100);
   transition: all 0.2s ease-in-out;
 }
+.findme .contacts .contact img {
+  width: 25px;
+}
 .findme .contacts .contact .text {
   padding: 0.5rem 0;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #464E50;
 }
@@ -11037,6 +11040,9 @@ body {
   .skills .skill-title {
     font-size: 1.3rem;
   }
+  .findme .contacts .contact img {
+    width: 35px;
+  }
 }
 @media (min-width: 992px) {
   .banner .name {
@@ -11050,6 +11056,9 @@ body {
   }
   .skills .skill-title {
     font-size: 1.4rem;
+  }
+  .findme .contacts .contact img {
+    width: 45px;
   }
 }
 @media (min-width: 1200px) {
@@ -11073,6 +11082,9 @@ body {
   }
   .skills .skill-text {
     font-size: 0.875rem;
+  }
+  .findme .contacts .contact img {
+    width: unset;
   }
 }
 

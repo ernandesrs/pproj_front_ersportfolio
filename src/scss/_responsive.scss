@@ -1,4 +1,30 @@
+@media(min-width: 562px) {
+    .floating-nav {
+        .container {
+            padding: unset;
+        }
+
+        .floating-nav-inner {
+            width: unset;
+        }
+    }
+}
+
 @media(min-width: 768px) {
+    .floating-nav {
+        .floating-nav-inner {
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .text {
+                    display: block;
+                }
+            }
+        }
+    }
+
     .banner {
         .name {
             font-size: 1.1625rem;
@@ -59,6 +85,19 @@
 }
 
 @media(min-width: 1200px) {
+    .floating-nav {
+        .floating-nav-inner {
+            a {
+                flex-direction: row;
+                justify-content: center;
+
+                .text {
+                    margin-left: $spacer / 2;
+                }
+            }
+        }
+    }
+
     .section {
         .title {
             font-size: 1.563rem;

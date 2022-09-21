@@ -1,4 +1,4 @@
-import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import { createApp } from "https://unpkg.com/vue@3.2.39/dist/vue.esm-browser.prod.js";
 
 createApp({
     data() {
@@ -20,7 +20,7 @@ createApp({
                     },
                     {
                         text: "Github",
-                        url: "",
+                        url: "https://github.com/ernandesrs",
                         icon: "./assets/img/icons/icon_github.svg"
                     }
                 ]
@@ -54,8 +54,8 @@ createApp({
                         {
                             image: "./assets/img/work_1_portfolio.png",
                             links: {
-                                live_preview: "#",
-                                github: "#"
+                                live_preview: "",
+                                github: "https://github.com/ernandesrs/pproj_front_ersportfolio"
                             },
                             title: "Portfolio",
                             description: "Este projeto é um portifólio. Foram utilizados HTML, CSS com Bootstrap 4 e SASS e JavaScript."
@@ -63,8 +63,8 @@ createApp({
                         {
                             image: "./assets/img/work_2_panel.png",
                             links: {
-                                live_preview: "#",
-                                github: "#"
+                                live_preview: "",
+                                github: "https://github.com/ernandesrs/pproj_laravel"
                             },
                             title: "Painel Administrativo",
                             description: "Neste projeto foram utilizados HTML, CSS com Bootstrap 4 e SASS, JavaScript com jQuery e PHP com Laravel 8."

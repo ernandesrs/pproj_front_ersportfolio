@@ -14,279 +14,227 @@
 
 <body>
 
-    <section class="section banner" id="top">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div
-                    class="col-12 col-lg-6 d-flex flex-column justify-content-center text-center text-lg-left">
-                    <header class="d-flex align-items-center py-2">
-                        <a href="" title="Lorem dolor sit to home">
-                            <div class="logo">
-                                <img class="img-fluid" src="./assets/img/logo.svg"
-                                    alt="Logo">
+    <div id="app">
+        <section class="section banner" id="top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div
+                        class="col-12 col-lg-6 d-flex flex-column justify-content-center text-center text-lg-left">
+                        <header class="d-flex align-items-center py-2">
+                            <a :href="settings?.url" :title="settings?.title">
+                                <div v-if="settings?.logo" class="logo">
+                                    <img class="img-fluid" :src="settings?.logo"
+                                        alt="Logo">
+                                </div>
+                                <h1 v-else class="name">
+                                    {{settings?.name}}
+                                </h1>
+                            </a>
+                            <div class="d-flex ml-auto ml-lg-4 social-profiles">
+                                <a v-for="profile in settings?.profiles"
+                                    v-bind:key="profile.text" :href="profile.url"
+                                    target="_blank" class="m-1">
+                                    <img :src="profile.icon" :alt="profile.text">
+                                </a>
                             </div>
-                            <h1 class="name sr-only"><span
-                                    class="text-primary-normal">ERS</span>PORTFOLIO</h1>
+                        </header>
+                        <div class="py-4">
+                            <h2 class="title">{{sections?.banner?.title}}</h2>
+                            <p class="description">{{sections?.banner?.description}}</p>
+                            <div>
+                                <a class="btn btn-primary-normal m-1" href="#skills">
+                                    Habilidades
+                                </a>
+                                <a class="btn btn-primary-normal m-1" href="#portfolio">
+                                    Portifólio
+                                </a>
+                                <a class="btn btn-outline-primary-normal m-1"
+                                    href="#findme">
+                                    Contato
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-9 col-lg-6 px-5 px-lg-3">
+                        <img class="img-fluid" :src="sections?.banner?.image"
+                            alt="Ilustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills" id="skills">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                        <h1 class="title">{{sections?.skills?.title}}</h1>
+                        <h2 class="subtitle px-5">{{sections?.skills?.subtitle}}</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center py-5">
+                    <div v-for="skill in sections?.skills?.skills_list"
+                        v-bind:key="skill.title"
+                        class="col-12 col-sm-6 col-lg-4 col-lg-3 mb-5 mb-sm-0">
+                        <div class="card card-body border-0 shadow skill">
+                            <div class="icon">
+                                <img :src="skill.icon" :alt="skill.title">
+                            </div>
+                            <h2 class="skill-title">{{skill.title}}</h2>
+                            <p class="skill-text">{{skill.text}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a class="btn btn-lg btn-outline-primary-normal" href="#findme">
+                        Entrar em contato
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section portfolio" id="portfolio">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                        <h1 class="title">{{sections?.portfolio?.title}}</h1>
+                        <h2 class="subtitle">{{sections?.portfolio?.title}}</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center py-5">
+                    <div v-for="job in sections?.portfolio?.jobs_list"
+                        v-bind:key="job.title"
+                        class="col-12 col-sm-6 col-lg-4 mb-4 mb-sm-0 portfolio-item">
+                        <div class="card card-body p-0 shadow border-0 portfolio-cover">
+                            <img class="img-fluid" :src="job.image" alt="">
+                            <div
+                                class="align-items-center justify-content-center rounded-lg w-100 buttons">
+                                <a v-if="job.links?.live_preview"
+                                    class="px-3 py-2 mx-1 rounded-sm bg-white"
+                                    :href="job.links?.live_preview" :title="job.title"
+                                    target="_blank">
+                                    <i class="icon bi bi-eye"></i>
+                                    <span class="text">Previsualização</span>
+                                </a>
+
+                                <a v-if="job.links?.github"
+                                    class="px-3 py-2 mx-1 rounded-sm bg-white"
+                                    :href="job.links?.github" :title="job.title">
+                                    <i class="icon bi bi-code-square"></i>
+                                    <span class="text">Github</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card card-body px-0 border-0 portfolio-info">
+                            <h3 class="mb-0 portfolio-item-title">{{job.title}}</h3>
+                            <p class="mb-0 py-2 portfolio-item-description">
+                                {{job.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section findme" id="findme">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                        <h1 class="title">{{sections?.contact?.title}}</h1>
+                        <h2 class="subtitle">{{sections?.contact?.subtitle}}</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center py-4">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                        <p class="text">{{sections?.contact?.description}}</p>
+                    </div>
+
+                    <div
+                        class="col-12 py-3 d-flex justify-content-center align-items-center contacts">
+                        <a v-for="link in sections?.contact?.profiles"
+                            v-bind:key="link.text" :href="link.url"
+                            class="text-center contact">
+                            <img :src="link.icon" :alt="link.text">
+                            <div class="text">{{link.text}}</div>
                         </a>
-                        <div class="flex ml-auto ml-lg-4 social-profiles">
-                            <a href="">
-                                <img src="./assets/img/icons/icon_github.svg"
-                                    alt="Github">
-                            </a>
-                            <a href="">
-                                <img src="./assets/img/icons/icon_linkedin.svg"
-                                    alt="Linkedin">
-                            </a>
-                        </div>
-                    </header>
-                    <div class="py-4">
-                        <h2 class="title">Lorem ipsum dolor sit</h2>
-                        <p class="description">
-                            Olá, me chamo Lorem Ipsum. Lorem ipsum dolor sit amet
-                            consectetur,
-                            adipisicing elit. Eum saepe enim tenetur accusamus fugiat
-                            quasi
-                            porro sunt beatae.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="section footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>
+                        <p class="mb-0">
+                            {{settings?.name}} © 2022
                         </p>
-                        <div>
-                            <a class="btn btn-primary-normal m-1" href="#skills">Lorem
-                                dolor</a>
-                            <a class="btn btn-primary-normal m-1" href="#portfolio">Sit
-                                dolor</a>
-                            <a class="btn btn-outline-primary-normal m-1"
-                                href="#findme">Dolor
-                                lorem</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-9 col-lg-6 px-5 px-lg-3">
-                    <img class="img-fluid" src="./assets/img/banner-ilustration-01.png"
-                        alt="Ilustration">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section skills" id="skills">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
-                    <h1 class="title">Lorem sit</h1>
-                    <h2 class="subtitle px-5">Lorem ipsum dolor sit amet</h2>
-                </div>
-            </div>
-
-            <div class="row justify-content-center py-5">
-                <div class="col-12 col-sm-6 col-lg-4 col-lg-3 mb-5 mb-sm-0">
-                    <div class="card card-body border-0 shadow skill">
-                        <div class="icon">
-                            <img src="./assets/img/icons/icon_ui.svg" alt="Frontend">
-                        </div>
-                        <h2 class="skill-title">
-                            Lorem ipsum
-                        </h2>
-                        <p class="skill-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-                            distinctio ab ex.
+                        <p class="mb-0">
+                            Todos os direitos reservados
                         </p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 col-lg-3">
-                    <div class="card card-body border-0 shadow skill">
-                        <div class="icon">
-                            <img src="./assets/img/icons/icon_database.svg" alt="Backend">
-                        </div>
-                        <h2 class="skill-title">
-                            Lorem dolor
-                        </h2>
-                        <p class="skill-text">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </div>
+                    </small>
                 </div>
             </div>
+        </footer>
 
-            <div class="text-center">
-                <a class="btn btn-lg btn-outline-primary-normal" href="#findme">
-                    Lorem, ipsum.
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section portfolio" id="portfolio">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
-                    <h1 class="title">Lorem sit</h1>
-                    <h2 class="subtitle">Lorem ipsum dolor</h2>
-                </div>
-            </div>
-
-            <div class="row justify-content-center py-5">
-                <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-sm-0 portfolio-item">
-                    <div class="card card-body p-0 shadow border-0 portfolio-cover">
-                        <img class="img-fluid" src="./assets/img/work_1_portfolio.png"
-                            alt="">
-                        <div
-                            class="align-items-center justify-content-center rounded-lg w-100 buttons">
-                            <a class="px-3 py-2 mx-1 rounded-sm bg-white" href=""
-                                title="Lorem ipsum dolor natus">
-                                <i class="icon bi bi-eye"></i>
-                                <span class="text">Previsualização</span>
-                            </a>
-
-                            <a class="px-3 py-2 mx-1 rounded-sm bg-white" href=""
-                                title="Lorem ipsum dolor natus">
-                                <i class="icon bi bi-code-square"></i>
-                                <span class="text">Github</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card card-body px-0 border-0 portfolio-info">
-                        <h3 class="mb-0 portfolio-item-title">Portifólio</h3>
-                        <p class="mb-0 py-2 portfolio-item-description">
-                            Este projeto é um portifólio. Foram utilizados HTML, CSS com
-                            Bootstrap 4 e SASS e JavaScript.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-sm-0 portfolio-item">
-                    <div class="card card-body p-0 shadow border-0 portfolio-cover">
-                        <img class="img-fluid" src="./assets/img/work_2_panel.png" alt="">
-                        <div
-                            class="align-items-center justify-content-center rounded-lg w-100 buttons">
-                            <a class="px-3 py-2 mx-1 rounded-sm bg-white" href=""
-                                title="Lorem ipsum dolor natus">
-                                <i class="icon bi bi-eye"></i>
-                                <span class="text">Previsualização</span>
-                            </a>
-
-                            <a class="px-3 py-2 mx-1 rounded-sm bg-white" href=""
-                                title="Lorem ipsum dolor natus">
-                                <i class="icon bi bi-code-square"></i>
-                                <span class="text">Github</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card card-body px-0 border-0 portfolio-info">
-                        <h3 class="mb-0 portfolio-item-title">Painel Administrativo</h3>
-                        <p class="mb-0 py-2 portfolio-item-description">
-                            Neste projeto foram utilizados HTML, CSS com Bootstrap 4 e
-                            SASS, JavaScript com jQuery e PHP com Laravel 8.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section findme" id="findme">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
-                    <h1 class="title">Lorem ipsum</h1>
-                    <h2 class="subtitle">Lorem ipsum dolor</h2>
-                </div>
-            </div>
-
-            <div class="row justify-content-center py-4">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
-                        natus adipisci quam! Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Dolores, illum!
-                    </p>
-                </div>
-
-                <div
-                    class="col-12 py-3 d-flex justify-content-center align-items-center contacts">
-                    <a class="text-center contact" href="">
-                        <img src="./assets/img/icons/linkedin.svg" alt="Linkedin">
-                        <div class="text">Linkedin</div>
+        <div v-if="showFloatingNav" :class="['floating-nav', {'visible-nav':showFloatingNav}]" id="floating-nav">
+            <div class="container">
+                <div class="floating-nav-inner">
+                    <a href="#top">
+                        <i class="icon bi bi-house"></i>
+                        <span class="text">
+                            Início
+                        </span>
                     </a>
-                    <a class="text-center contact" href="">
-                        <img src="./assets/img/icons/workana.svg" alt="Workana">
-                        <div class="text">Workana</div>
+                    <a href="#skills">
+                        <i class="icon bi bi-award"></i>
+                        <span class="text">
+                            habilidades
+                        </span>
                     </a>
-                    <a class="text-center contact" href="">
-                        <img src="./assets/img/icons/vintepila.svg" alt="Vinte Pila">
-                        <div class="text">Vinte Pila</div>
+                    <a href="#portfolio">
+                        <i class="icon bi bi-briefcase"></i>
+                        <span class="text">
+                            portfólio
+                        </span>
+                    </a>
+                    <a href="#findme">
+                        <i class="icon bi bi-envelope-paper"></i>
+                        <span class="text">
+                            contato
+                        </span>
                     </a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <footer class="section footer">
-        <div class="container">
-            <div class="text-center">
-                <small>
-                    <p class="mb-0">
-                        ERSPORTFOLIO © 2022
-                    </p>
-                    <p class="mb-0">
-                        Todos os direitos reservados
-                    </p>
-                </small>
-            </div>
-        </div>
-    </footer>
-
-    <div class="floating-nav" id="floating-nav">
-        <div class="container">
-            <div class="floating-nav-inner">
-                <a href="#top">
-                    <i class="icon bi bi-house"></i>
-                    <span class="text">
-                        Início
-                    </span>
-                </a>
-                <a href="#skills">
-                    <i class="icon bi bi-award"></i>
-                    <span class="text">
-                        habilidades
-                    </span>
-                </a>
-                <a href="#portfolio">
-                    <i class="icon bi bi-briefcase"></i>
-                    <span class="text">
-                        portfólio
-                    </span>
-                </a>
-                <a href="#findme">
-                    <i class="icon bi bi-envelope-paper"></i>
-                    <span class="text">
-                        contato
-                    </span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="cookie-alert" id="cookie-alert">
-        <div class="container">
-            <div class="shadow rounded-lg cookie-alert-inner">
-                <h4 class="cookie-alert-title">Usamos cookie!</h4>
-                <p class="mb-1 cookie-alert-description">Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit, ullam ipsa voluptate quidem odit cum
-                    sequi, conforme <a href="">nossas políticas de privacidade</a>.</p>
-                <div class="text-left pt-2">
-                    <a class="btn btn-dark-normal btn-sm button-accept">
-                        Aceitar e fechar
-                    </a>
-                    <a class="btn btn-outline-dark-normal btn-sm button-close">
-                        Fechar
-                    </a>
+        <div v-if="showCookieAlert" :class="['cookie-alert', {'show-cookie-alert':showCookieAlert}]"
+            id="cookie-alert">
+            <div class="container">
+                {{showFloatingNav}}
+                <div class="shadow rounded-lg cookie-alert-inner">
+                    <h4 class="cookie-alert-title">{{sections?.cookie_alert?.title}}</h4>
+                    <p v-html="sections?.cookie_alert?.description"
+                        class="mb-1 cookie-alert-description"></p>
+                    <div class="text-left pt-2">
+                        <a @click="acceptCookie"
+                            class="btn btn-dark-normal btn-sm m-1 button-accept">
+                            Aceitar e fechar
+                        </a>
+                        <a @click="closeCookieAlert"
+                            class="btn btn-outline-dark-normal btn-sm m-1 button-close">
+                            Fechar
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/vue.js" type="module"></script>
 
 </body>
 

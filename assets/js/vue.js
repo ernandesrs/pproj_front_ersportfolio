@@ -29,7 +29,7 @@ createApp({
                 banner: {
                     title: "Lorem Ipsum Dolor Sit",
                     description: "Olá, me chamo Lorem Ipsum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum saepe enim tenetur accusamus fugiat quasi porro sunt beatae.",
-                    image: "./assets/img/banner-ilustration.png"
+                    image: "./assets/img/banner-ilustration-01.png"
                 },
                 skills: {
                     title: "LOREM SIT",

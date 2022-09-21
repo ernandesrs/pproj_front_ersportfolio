@@ -10857,6 +10857,14 @@ body {
   font-family: "Maven Pro", sans-serif;
   color: #575F61;
 }
+body a {
+  color: #23B0CF;
+  transition: all 0.2s ease-in-out;
+}
+body a:hover {
+  transition: all 0.2s ease-in-out;
+  color: #829599;
+}
 
 .floating-nav {
   width: 100%;

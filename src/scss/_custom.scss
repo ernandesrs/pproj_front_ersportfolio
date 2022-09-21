@@ -4,6 +4,16 @@ body {
 
     font-family: 'Maven Pro', sans-serif;
     color: $dark-normal;
+
+    a {
+        color: $primary-normal;
+        transition: $transition-base;
+
+        &:hover {
+            transition: $transition-base;
+            color: $secondary-dark;
+        }
+    }
 }
 
 .floating-nav {

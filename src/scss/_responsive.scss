@@ -8,6 +8,12 @@
             font-size: 2.3rem;
         }
     }
+
+    .skills {
+        .skill-title {
+            font-size: 1.3rem;
+        }
+    }
 }
 
 @media(min-width: 992px) {
@@ -22,6 +28,12 @@
 
         .description {
             font-size: 1.15rem;
+        }
+    }
+
+    .skills {
+        .skill-title {
+            font-size: 1.4rem;
         }
     }
 }
@@ -48,6 +60,16 @@
 
         .description {
             font-size: 1.2rem;
+        }
+    }
+
+    .skills {
+        .skill-title {
+            font-size: 1.563rem;
+        }
+
+        .skill-text {
+            font-size: 0.875rem;
         }
     }
 }

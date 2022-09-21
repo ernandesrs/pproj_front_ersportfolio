@@ -10976,14 +10976,14 @@ body {
   height: 30px;
 }
 .skills .skill .skill-title {
-  font-size: 1.563rem;
+  font-size: 1.25rem;
   font-weight: 600;
   padding: 0.5rem 0;
   margin-bottom: 0;
 }
 .skills .skill .skill-text {
-  text-align: center;
   font-size: 0.875rem;
+  text-align: center;
   font-weight: 600;
 }
 
@@ -11034,6 +11034,9 @@ body {
   .banner .title {
     font-size: 2.3rem;
   }
+  .skills .skill-title {
+    font-size: 1.3rem;
+  }
 }
 @media (min-width: 992px) {
   .banner .name {
@@ -11044,6 +11047,9 @@ body {
   }
   .banner .description {
     font-size: 1.15rem;
+  }
+  .skills .skill-title {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 1200px) {
@@ -11061,6 +11067,12 @@ body {
   }
   .banner .description {
     font-size: 1.2rem;
+  }
+  .skills .skill-title {
+    font-size: 1.563rem;
+  }
+  .skills .skill-text {
+    font-size: 0.875rem;
   }
 }
 

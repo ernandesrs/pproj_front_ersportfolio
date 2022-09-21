@@ -215,7 +215,6 @@
         <div v-if="showCookieAlert" :class="['cookie-alert', {'show-cookie-alert':showCookieAlert}]"
             id="cookie-alert">
             <div class="container">
-                {{showFloatingNav}}
                 <div class="shadow rounded-lg cookie-alert-inner">
                     <h4 class="cookie-alert-title">{{sections?.cookie_alert?.title}}</h4>
                     <p v-html="sections?.cookie_alert?.description"

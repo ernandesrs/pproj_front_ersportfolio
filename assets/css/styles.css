@@ -11006,8 +11006,78 @@ body .btn {
   font-weight: 600;
 }
 
-.works {
+.portfolio {
   min-height: 100vh;
+}
+.portfolio .portfolio-item {
+  cursor: default;
+}
+.portfolio .portfolio-item .portfolio-cover {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.portfolio .portfolio-item .portfolio-cover .img-fluid {
+  opacity: 1;
+  transition-duration: 0.375s;
+}
+.portfolio .portfolio-item .portfolio-cover .buttons {
+  display: flex;
+  background-image: url(./../../assets/img/box-gradient.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+.portfolio .portfolio-item .portfolio-cover .buttons a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition-duration: 0.375s;
+}
+.portfolio .portfolio-item .portfolio-cover .buttons a .icon {
+  font-size: 1rem;
+}
+.portfolio .portfolio-item .portfolio-cover .buttons a .text {
+  display: none;
+}
+.portfolio .portfolio-item .portfolio-cover .buttons a:hover {
+  background-color: #23B0CF !important;
+  color: #F5F5F5;
+  text-decoration: none;
+  transition-duration: 0.375s;
+}
+.portfolio .portfolio-item .portfolio-info {
+  background-color: transparent;
+}
+.portfolio .portfolio-item .portfolio-info .portfolio-item-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #464E50;
+}
+.portfolio .portfolio-item .portfolio-info .portfolio-item-description {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7F8A8C;
+}
+.portfolio .portfolio-item:hover .portfolio-cover .img-fluid {
+  transform: scale(1.05);
+  transition-duration: 0.375s;
+}
+.portfolio .portfolio-item:hover .portfolio-cover .buttons {
+  animation-name: showAnimation;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.375s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes showAnimation {
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .findme {
@@ -11127,6 +11197,16 @@ body .btn {
   }
   .skills .skill-text {
     font-size: 0.875rem;
+  }
+  .portfolio .portfolio-item .portfolio-cover .buttons a {
+    display: flex;
+    align-items: center;
+  }
+  .portfolio .portfolio-item .portfolio-cover .buttons a .icon {
+    margin-right: 0.25rem;
+  }
+  .portfolio .portfolio-item .portfolio-cover .buttons a .text {
+    display: inline-block;
   }
   .findme .contacts .contact img {
     width: unset;

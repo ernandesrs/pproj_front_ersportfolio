@@ -132,6 +132,27 @@
         }
     }
 
+    .portfolio {
+        .portfolio-item {
+            .portfolio-cover {
+                .buttons {
+                    a {
+                        display: flex;
+                        align-items: center;
+
+                        .icon {
+                            margin-right: $spacer / 4;
+                        }
+
+                        .text {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .findme {
         .contacts {
             .contact {

@@ -13,3 +13,20 @@ const scroll = document.addEventListener("scroll", function () {
 
     floatingNav.classList.add("visible-nav");
 });
+
+const cookieAlert = document.querySelector("#cookie-alert");
+
+if (!localStorage.getItem("cookie_accept")) {
+    cookieAlert.classList.add("show-cookie-alert");
+}
+
+if (cookieAlert.classList.contains("show-cookie-alert")) {
+    cookieAlert.querySelector(".button-accept").addEventListener("click", function (e) {
+        localStorage.setItem("cookie_accept", true);
+        cookieAlert.classList.remove("show-cookie-alert");
+    });
+
+    cookieAlert.querySelector(".button-close").addEventListener("click", function (e) {
+        cookieAlert.classList.remove("show-cookie-alert");
+    });
+}

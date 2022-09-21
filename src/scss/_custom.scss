@@ -14,10 +14,6 @@ body {
             color: $secondary-dark;
         }
     }
-
-    .btn {
-        padding: $spacer / 1.5 $spacer * 2.5;
-    }
 }
 
 .floating-nav {
@@ -74,6 +70,52 @@ body {
             .text {
                 display: none;
             }
+        }
+    }
+}
+
+.cookie-alert {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: $spacer / 4;
+    z-index: 900;
+    transform: translateY(100%);
+    opacity: 0;
+
+    &.show-cookie-alert {
+        animation: showCA 0.375s ease-in-out 1 both;
+
+        @keyframes showCA {
+            100% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        max-width: 625px;
+    }
+
+    .cookie-alert-inner {
+        background-color: $white;
+        width: 100%;
+        padding: $spacer $spacer * 1.5;
+
+        .cookie-alert-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: $dark-dark;
+        }
+
+        .cookie-alert-description {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $dark-normal;
         }
     }
 }

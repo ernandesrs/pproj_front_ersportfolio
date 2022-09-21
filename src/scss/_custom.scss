@@ -14,6 +14,10 @@ body {
             color: $secondary-dark;
         }
     }
+
+    .btn {
+        padding: $spacer / 1.5 $spacer * 2.5;
+    }
 }
 
 .floating-nav {

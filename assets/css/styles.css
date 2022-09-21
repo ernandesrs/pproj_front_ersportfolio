@@ -10906,16 +10906,17 @@ body {
   width: 100%;
   position: relative;
   z-index: 1;
+  padding: 2rem 0;
 }
 .section .title {
-  font-size: 1.563rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #7F8A8C;
   text-transform: uppercase;
 }
 .section .subtitle {
   font-weight: 600;
-  font-size: 2.188rem;
+  font-size: 1.8rem;
   color: #575F61;
   text-transform: capitalize;
 }
@@ -10938,16 +10939,17 @@ body {
   height: 30px;
 }
 .banner .name {
-  font-size: 1.563rem;
+  font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 0;
 }
 .banner .title {
-  font-size: 3.125rem;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: capitalize;
 }
 .banner .description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
@@ -11023,6 +11025,43 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .banner .name {
+    font-size: 1.1625rem;
+  }
+  .banner .title {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 992px) {
+  .banner .name {
+    font-size: 1.25rem;
+  }
+  .banner .title {
+    font-size: 2.6rem;
+  }
+  .banner .description {
+    font-size: 1.15rem;
+  }
+}
+@media (min-width: 1200px) {
+  .section .title {
+    font-size: 1.563rem;
+  }
+  .section .subtitle {
+    font-size: 2.188rem;
+  }
+  .banner .name {
+    font-size: 1.563rem;
+  }
+  .banner .title {
+    font-size: 3.125rem;
+  }
+  .banner .description {
+    font-size: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

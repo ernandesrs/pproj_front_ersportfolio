@@ -60,9 +60,10 @@ body {
     width: 100%;
     position: relative;
     z-index: 1;
+    padding: $spacer * 2 0;
 
     .title {
-        font-size: 1.563rem;
+        font-size: 1rem;
         font-weight: 600;
         color: $dark-light;
         text-transform: uppercase;
@@ -70,7 +71,7 @@ body {
 
     .subtitle {
         font-weight: 600;
-        font-size: 2.188rem;
+        font-size: 1.8rem;
         color: $dark-normal;
         text-transform: capitalize;
     }
@@ -100,18 +101,19 @@ body {
     }
 
     .name {
-        font-size: 1.563rem;
+        font-size: 1rem;
         font-weight: 600;
+        margin-bottom: 0;
     }
 
     .title {
-        font-size: 3.125rem;
+        font-size: 2rem;
         font-weight: 700;
         text-transform: capitalize;
     }
 
     .description {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 600;
     }
 }

@@ -10859,6 +10859,7 @@ body {
 }
 
 .floating-nav {
+  display: none;
   width: 100%;
   position: fixed;
   top: 0.25rem;

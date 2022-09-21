@@ -11029,6 +11029,9 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.footer small {
+  font-size: 0.785rem;
+}
 
 @media (min-width: 768px) {
   .banner .name {

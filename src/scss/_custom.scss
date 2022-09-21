@@ -206,4 +206,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    small {
+        font-size: 0.785rem;
+    }
 }

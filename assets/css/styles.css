@@ -10991,8 +10991,8 @@ body a:hover {
   text-decoration: none;
 }
 .banner .social-profiles a img {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 .banner .name {
   font-size: 1rem;
@@ -11198,6 +11198,10 @@ body a:hover {
   }
   .banner .description {
     font-size: 1.15rem;
+  }
+  .banner .social-profiles a img {
+    width: 28px;
+    height: 28px;
   }
   .skills .skill-title {
     font-size: 1.4rem;
